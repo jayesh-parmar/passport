@@ -13,14 +13,14 @@ class UserController extends Controller
 
         if (Auth::attempt($user)) {
             $user = Auth::user();
-            $token = $user->createToken('MyApp')->accessToken;
+            $token = $user->createToken('myapi')->accessToken;
 
             return response()->json(['access_token' => $token,'user'=>$user], 200);
         } else {
             return response()->json(['error' => 'Unauthorized',404]);
         }
     }
-    
+
 
     
 }
