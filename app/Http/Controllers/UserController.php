@@ -17,9 +17,10 @@ class UserController extends Controller
 
             return response()->json(['access_token' => $token,'user'=>$user], 200);
         } else {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['error' => 'Unauthorized',404]);
         }
     }
+    
 
     
 }
